@@ -1,0 +1,16 @@
+.nav-block{
+    width: 100%;
+}
+
+.card{
+    width: 80%;
+    margin-right: 40%;
+    margin-left: 5%;
+}
+
+.pdf-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+}

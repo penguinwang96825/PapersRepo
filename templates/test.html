@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <ul>
+            {% for key, value in data.iterrows(): %}
+            <li>{{ value["title"] }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

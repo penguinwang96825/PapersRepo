@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>PapersRepo from Yang Wang</title>
+  </head>
+
+  <body>
+    <div id="wrapper-content" style="background-color: #bad7df;">
+      <div class="nav-block">
+          <nav class="navbar navbar-light" style="background-color: #abedd8; font-weight: bold;">
+            <!-- Navbar content -->
+            <a class="navbar-brand" id="logo" style="color: #3d84a8;">PapersRepo</a>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </nav>
+      </div>
+
+      <section class="wrapper">
+        <div class="card-block">
+          {% for key, value in data.iterrows() %}
+            <div class="card", style="margin-top: 2%">
+              <div class="card-body">
+                <span class="badge badge-light">{{ value["date"] }}</span>
+                {% for tag in value["tags"] %}
+                  <span class="badge badge-pill badge-primary" style="text-transform: uppercase;">{{ tag }}</span>
+                {% endfor %}
+                <h5 class="card-title">{{ value["title"] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ value["authors"] }}</h6>
+                <p class="card-text latex">{{ value["abstract"] }}</p>
+                <a href='{{ value["link"] }}' class="card-link pdf-icon"><i class="far fa-file-pdf"></i> PDF</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/penguinwang96825">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1" href="https://twitter.com/YangWang96825">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/in/yang-wang-33a007167/">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> Yang Wang</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</html>
